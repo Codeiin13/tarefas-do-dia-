@@ -1,0 +1,106 @@
+/* Estilizar o formulário de adicionar tarefa */
+#nova-tarefa {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  #nova-tarefa label {
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  #nova-tarefa input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+  }
+  
+  #nova-tarefa select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+  }
+  
+  #nova-tarefa button[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #nova-tarefa button[type="submit"]:hover {
+    background-color: #3e8e41;
+  }
+  
+  /* Estilizar a lista de tarefas */
+  #lista-tarefas {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  #lista-tarefas li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    background-color: #fff;
+  }
+  
+  #lista-tarefas li.concluida {
+    background-color: #c6efce;
+    text-decoration: line-through;
+    color: #666;
+  }
+  
+  #lista-tarefas li .descricao {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  #lista-tarefas li .prioridade {
+    color: #666;
+    font-size: 14px;
+  }
+  
+  #lista-tarefas li input[type="checkbox"] {
+    margin-right: 10px;
+    accent-color: #4CAF50;
+  }
+  
+  #lista-tarefas li .concluida {
+    color: #666;
+  }
+  
+  #lista-tarefas li .remover {
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  #lista-tarefas li .remover:hover {
+    background-color: #cc0000;
+  }
+  
+  #lista-tarefas li:hover {
+    background-color: #f2f2f2;
+  }
