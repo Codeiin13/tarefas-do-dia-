@@ -1,0 +1,68 @@
+let tarefas = [];
+
+document.addEventListener("DOMContentLoaded", function() {
+  const listaTarefas = document.getElementById("lista-tarefas");
+  const formulario = document.getElementById("nova-tarefa");
+  const inputDescricao = document.getElementById("descricao");
+  const selectPrioridade = document.getElementById("prioridade");
+  const buttonAdicionar = document.getElementById("adicionar");
+
+  // Função para renderizar a lista de tarefas
+  function renderizarLista() {
+    listaTarefas.innerHTML = "";
+    tarefas.forEach((tarefa) => {
+      const li = document.createElement("li");
+      li.dataset.id = tarefa.id;
+      li.innerHTML = `
+        <span class="descricao">${tarefa.descricao}</span>
+        <span class="prioridade">Prioridade: ${tarefa.prioridade}</span>
+        <input type="checkbox" ${tarefa.concluida ? "checked" : ""}>
+        <span class="concluida">${tarefa.concluida ? "Concluída" : "Não concluída"}</span>
+        <button class="remover">Remover</button>
+      `;
+      if (tarefa.concluida) {
+        li.classList.add("concluida");
+      }
+      listaTarefas.appendChild(li);
+      const checkbox = li.querySelector("input[type='checkbox']");
+      checkbox.addEventListener("change", () => {
+        tarefa.concluida = checkbox.checked;
+        renderizarLista();
+      });
+      const buttonRemover = li.querySelector("button.remover");
+      buttonRemover.addEventListener("click", () => {
+        tarefas = tarefas.filter((t) => t.id !== tarefa.id);
+        renderizarLista();
+      });
+    });
+  }
+
+  // Função para adicionar uma nova tarefa
+  function adicionarTarefa() {
+    const descricao = inputDescricao.value.trim();
+    const prioridade = selectPrioridade.value;
+    if (descricao!== "") {
+      const tarefa = {
+        id: tarefas.length + 1,
+        descricao,
+        prioridade,
+        concluida: false
+      };
+      tarefas.push(tarefa);
+      inputDescricao.value = "";
+      renderizarLista();
+    }
+  }
+
+  // Adicionar evento de submit ao formulário
+  formulario.addEventListener("submit", (e) => {
+    e.preventDefault();
+    adicionarTarefa();
+  });
+
+  // Adicionar evento de click ao botão de adicionar
+  buttonAdicionar.addEventListener("click", adicionarTarefa);
+
+  // Renderizar a lista de tarefas inicialmente
+  renderizarLista();
+});
