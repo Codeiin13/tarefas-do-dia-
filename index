@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarefas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Tarefas</h1>
+    </header>
+    <main>
+        <section id="tarefas">
+            <h2>Tarefas</h2>
+            <ul id="lista-tarefas">
+                <!-- lista de tarefas será renderizada aqui -->
+            </ul>
+            <form id="nova-tarefa">
+                <input type="text" id="descricao" placeholder="Nova tarefa">
+                <select id="prioridade">
+                    <option value="baixa">Baixa</option>
+                    <option value="media">Média</option>
+                    <option value="alta">Alta</option>
+                </select>
+                <button id="adicionar">Adicionar</button>
+            </form>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
